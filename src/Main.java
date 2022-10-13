@@ -1,4 +1,6 @@
+import transport.Bus;
 import transport.Car;
+import transport.Train;
 
 public class Main {
     public static void main(String[] args) {
@@ -41,6 +43,22 @@ public class Main {
 
         cars.checkTire(cars.getCars());
 
+        /*
+        * Поезд «Ласточка», модель B-901, 2011 год выпуска в России, скорость передвижения — 301 км/ч, отходит от Белорусского вокзала и следует до станции Минск-Пассажирский. Цена поездки — 3500 рублей, в поезде 11 вагонов.
+        * Поезд «Ленинград», модель D-125, 2019 год выпуска в России, скорость передвижения — 270 км/ч, отходит от Ленинградского вокзала и следует до станции Ленинград-Пассажирский. Цена поездки — 1700 рублей, в поезде 8 вагонов.
+        * */
+        Train train = new Train();
+        Train lastochka = new Train("Ласточка", "B-901", 2011,"Россия", null, 301,  3500f, 4,"Белорусского вокзала","Минск-Пассажирский", 11);
+        train.addTrain(lastochka);
+        Train lenangrad = new Train("Ленинград", "D-125", 2019, "Россия", null, 270, 1700f, 5, "Ленинградского вокзала", "Ленинград-Пассажирский", 8);
+        train.addTrain(lenangrad);
+        for (int i = 0; i < train.getTrains().length; i++) {
+            printTrainsInfo(train.getTrains()[i]);
+        }
+
+        Bus bus = new Bus();
+        System.out.println(bus.toString());
+
 
     }
 
@@ -49,5 +67,10 @@ public class Main {
     private static void printCarInfo(Car car) {
 
         System.out.println(car.getBrand()+ ", " +" номер "+ car.getRegistrationNumber()+ " " + car.getModel()+ ", год выпуска, " + car.getManufactureYear() + ", сборка в  " + car.getCountry() + ", цвет " + car.getColor() + ", объем двигателя " + car.getVolumeEngine() +" литра");
+    }
+    private static void printTrainsInfo(Train train) {
+
+        System.out.println(train.getBrand()+ ", "  + train.getModel()+ ", год выпуска, " + train.getManufactureYear() + ", сборка в  " + train.getCountry() +
+                " отходит от "+ train.getStationName() +" до станции " + train.getStationFinal() + ".  Цена поездки - " + train.getPrice() + " в поезде " + train.getWagonCount() + " вагонов");
     }
 }
