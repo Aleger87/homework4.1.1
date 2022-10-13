@@ -82,39 +82,20 @@ public class Car extends Transport {
     private String bodyType;
     private String registrationNumber;
     private int seat;
-
     private boolean winterTire;
-
-    private Key key;
-
-    public Key getKey() {
-        return key;
-    }
-
-    public void setInsurance(Insurance insurance) {
-        this.insurance = insurance;
-    }
-
-    Insurance insurance;
-
-    public Insurance getInsurance() {
-        return insurance;
-    }
-
-    public void setWinterTire(boolean winterTire) {
-        this.winterTire = winterTire;
-    }
-
-    public boolean isWinterTire() {
-        return winterTire;
-    }
-
     private Car[] cars;
+    private Key key;
+    Insurance insurance;
 
     public Car(){
 
         this ("default", "default", 2000, "default", "белый", 1.5f,
                 null, null,null,0,false,null,0);
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("можно заправлять бензином, дизелем на заправке или заряжать");
     }
 
     public Car(String brand, String model, int manufactureYear,  String country, String color,
@@ -164,61 +145,6 @@ public class Car extends Transport {
     }
 
 
-    public Car[] getCars() {
-        if (cars == null){
-            cars = new Car[0];
-        }
-        return cars;
-    }
-    public void addCars (Car car){
-        this.cars = Arrays.copyOf(getCars(),  getCars().length+1);
-        this.cars[this.cars.length-1] = car;
-    }
-
-
-    public float getVolumeEngine() {
-        return volumeEngine;
-    }
-
-
-
-    public void setVolumeEngine(float volumeEngine) {
-        this.volumeEngine = volumeEngine;
-    }
-
-    public void setTransmission(String transmission) {
-        this.transmission = transmission;
-    }
-
-    public void setRegistrationNumber(String registrationNumber) {
-        this.registrationNumber = registrationNumber;
-    }
-
-
-
-    public void setCars(Car[] cars) {
-        this.cars = cars;
-    }
-
-    public String getTransmission() {
-        return transmission;
-    }
-
-    public String getBodyType() {
-        return bodyType;
-    }
-
-    public String getRegistrationNumber() {
-        return registrationNumber;
-    }
-
-    public int getSeat() {
-        return seat;
-    }
-
-
-
-
     public void checkTire(Car[] cars) {
         int[] month = {10,11,12,1,2,3}; //зимняя резина
         LocalDate localDate = LocalDate.now();
@@ -263,6 +189,74 @@ public class Car extends Transport {
 
     }
 
+    public Key getKey() {
+        return key;
+    }
+
+    public void setInsurance(Insurance insurance) {
+        this.insurance = insurance;
+    }
+
+    public Insurance getInsurance() {
+        return insurance;
+    }
+
+    public void setWinterTire(boolean winterTire) {
+        this.winterTire = winterTire;
+    }
+
+    public boolean isWinterTire() {
+        return winterTire;
+    }
+
+    public Car[] getCars() {
+        if (cars == null){
+            cars = new Car[0];
+        }
+        return cars;
+    }
+
+    public void addCars (Car car){
+        this.cars = Arrays.copyOf(getCars(),  getCars().length+1);
+        this.cars[this.cars.length-1] = car;
+    }
+
+
+    public float getVolumeEngine() {
+        return volumeEngine;
+    }
+
+    public void setVolumeEngine(float volumeEngine) {
+        this.volumeEngine = volumeEngine;
+    }
+
+    public void setTransmission(String transmission) {
+        this.transmission = transmission;
+    }
+
+    public void setRegistrationNumber(String registrationNumber) {
+        this.registrationNumber = registrationNumber;
+    }
+
+    public void setCars(Car[] cars) {
+        this.cars = cars;
+    }
+
+    public String getTransmission() {
+        return transmission;
+    }
+
+    public String getBodyType() {
+        return bodyType;
+    }
+
+    public String getRegistrationNumber() {
+        return registrationNumber;
+    }
+
+    public int getSeat() {
+        return seat;
+    }
 
 
 }

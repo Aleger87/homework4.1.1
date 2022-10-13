@@ -1,6 +1,6 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
     private String brand;
     private  String  model;
     private int  manufactureYear;
@@ -58,6 +58,9 @@ public class Transport {
 
         this.maxSpeed = maxSpeed;
     }
+
+    public abstract void refill();
+
     @Override
     public String toString() {
         return "Transport{" +

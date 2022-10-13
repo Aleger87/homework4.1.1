@@ -59,6 +59,10 @@ public class Main {
         Bus bus = new Bus();
         System.out.println(bus.toString());
 
+        bus.refill();
+        lada.refill();
+        lastochka.refill();
+
 
     }
 

@@ -14,6 +14,11 @@ public class Train extends Transport {
         this(null,null,2000,"Россия","белый",0,0,0,null,null,0);
     }
 
+    @Override
+    public void refill() {
+        System.out.println("нужно заправлять дизелем");
+    }
+
 
     public Train(String brand, String model, int manufactureYear, String country, String color, int maxSpeed, float price, int time, String stationName, String stationFinal, int wagonCount) {
         super(brand, model, manufactureYear, country, color, maxSpeed);
