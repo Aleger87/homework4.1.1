@@ -16,32 +16,26 @@ public class Main {
 
         Car lada = new Car("Lada", "Grande", 2015, "Россия", "Желтый", 1.7f,
                 null,null,"В100АP781",0,true, keyTrue,160);
-        cars.addCars(lada);
+
         Car.Insurance ins =  lada.new Insurance(360,3000,"12345678F");
         lada.setInsurance(ins);
         System.out.println(lada.getInsurance().getNumberInsurance());
 
         Car audi = new Car("Audi", "A8", 2020,
                 "Германия", "черный", 3.0f,null, null,null,0,false, keyFalseTrue, 220);
-        cars.addCars(audi);
+
 
         Car bmw = new Car("BMW", "Z8", 2021, "Германия", "черный", 3.0f,
                 null, null,null,0,true, keyFalse, 280);
-        cars.addCars(bmw);
+
 
         Car kia = new Car("Kia", "Sportage 4 поколение", 2018, "Южная Корея", "красный", 2.4f,
                 null, null,null,0,false, keyTrueFalse, 180);
-        cars.addCars(kia);
+
 
         Car hyundai = new Car("Hyundai", null, 0, "Южная Корея", null, 1.6f,
                 null, null,null,0,false, keyTrue, 0);
-        cars.addCars(hyundai);
 
-        for (int i = 0; i < cars.getCars().length; i++) {
-            printCarInfo(cars.getCars()[i]);
-        }
-
-        cars.checkTire(cars.getCars());
 
         /*
         * Поезд «Ласточка», модель B-901, 2011 год выпуска в России, скорость передвижения — 301 км/ч, отходит от Белорусского вокзала и следует до станции Минск-Пассажирский. Цена поездки — 3500 рублей, в поезде 11 вагонов.

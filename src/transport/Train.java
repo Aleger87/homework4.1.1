@@ -8,7 +8,6 @@ public class Train extends Transport {
     private String stationName;
     private String stationFinal;
     private int wagonCount;
-    private Train[] trains;
 
     public Train() {
         this(null,null,2000,"Россия","белый",0,0,0,null,null,0);
@@ -27,19 +26,8 @@ public class Train extends Transport {
         this.stationName = stationName;
         this.stationFinal = stationFinal;
         this.wagonCount = wagonCount;
-        trains = new Train[0];
 
-    }
-    public void addTrain (Train train){
-        this.trains = Arrays.copyOf(getTrains(),  getTrains().length+1);
-        this.trains[this.trains.length-1] = train;
-    }
 
-    public Train[] getTrains() {
-        if (trains == null){
-            trains = new Train[0];
-        }
-        return trains;
     }
 
 

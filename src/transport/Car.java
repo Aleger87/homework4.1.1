@@ -83,7 +83,6 @@ public class Car extends Transport {
     private String registrationNumber;
     private int seat;
     private boolean winterTire;
-    private Car[] cars;
     private Key key;
     Insurance insurance;
 
@@ -141,7 +140,6 @@ public class Car extends Transport {
             checkRegistrationNumber(registrationNumber);
             this.registrationNumber = registrationNumber;
         }
-        cars = new Car[0];
     }
 
 
@@ -209,19 +207,6 @@ public class Car extends Transport {
         return winterTire;
     }
 
-    public Car[] getCars() {
-        if (cars == null){
-            cars = new Car[0];
-        }
-        return cars;
-    }
-
-    public void addCars (Car car){
-        this.cars = Arrays.copyOf(getCars(),  getCars().length+1);
-        this.cars[this.cars.length-1] = car;
-    }
-
-
     public float getVolumeEngine() {
         return volumeEngine;
     }
@@ -236,10 +221,6 @@ public class Car extends Transport {
 
     public void setRegistrationNumber(String registrationNumber) {
         this.registrationNumber = registrationNumber;
-    }
-
-    public void setCars(Car[] cars) {
-        this.cars = cars;
     }
 
     public String getTransmission() {
