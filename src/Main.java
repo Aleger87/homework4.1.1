@@ -43,12 +43,10 @@ public class Main {
         * */
         Train train = new Train();
         Train lastochka = new Train("Ласточка", "B-901", 2011,"Россия", null, 301,  3500f, 4,"Белорусского вокзала","Минск-Пассажирский", 11);
-        train.addTrain(lastochka);
+
         Train lenangrad = new Train("Ленинград", "D-125", 2019, "Россия", null, 270, 1700f, 5, "Ленинградского вокзала", "Ленинград-Пассажирский", 8);
-        train.addTrain(lenangrad);
-        for (int i = 0; i < train.getTrains().length; i++) {
-            printTrainsInfo(train.getTrains()[i]);
-        }
+
+
 
         Bus bus = new Bus();
         System.out.println(bus.toString());
